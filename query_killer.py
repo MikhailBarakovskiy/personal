@@ -7,11 +7,11 @@ def similar_queries(connect, match_percentage=0.8):
     matcher = difflib.SequenceMatcher() #создаем экземпляр класса SequenceMatcher
     list4kill = []
     for q in query_list:
-        matcher.set_seq2(q[1]) #устанавливаем превую последовательность для сравнения
+        matcher.set_seq2(q[1]) #устанавливаем первую последовательность для сравнения
         for q2 in query_list:
             if q[1] == q2[1]:
                 continue
-            matcher.set_seq1(q2[1]) #устанавливаем превую последовательность для сравнения
+            matcher.set_seq1(q2[1]) #устанавливаем вторую последовательность для сравнения
             if matcher.ratio() > match_percentage:
                 list4kill.append(q2[0])
     return list4kill
