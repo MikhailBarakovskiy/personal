@@ -7,7 +7,7 @@ usernames = "'TEAMCITY'"
 
 def send_slack_message(message):
     payload = '{"text": "%s"}' % message
-    responce = requests.post('https://hooks.slack.com/services/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',
+    responce = requests.post(URL,
                              data=payload)
 
 
